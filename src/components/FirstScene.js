@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import * as THREE from 'three';
 
-const FirstScene = () => {
+const BasicScene = () => {
   const sceneRef = useRef();
 
   useEffect(() => {
@@ -24,21 +24,41 @@ const FirstScene = () => {
 
     // Animation function
     const animate = () => {
-      requestAnimationFrame(animate);
-
       // Rotate the cube
       cube.rotation.x += 0.01;
       cube.rotation.y += 0.01;
 
       // Render the scene
       renderer.render(scene, camera);
+
+      // Request the next frame
+      requestAnimationFrame(animate);
     };
 
     // Start the animation loop
     animate();
-  }, []);
+
+    // Handle window resize
+    const handleResize = () => {
+      const newWidth = window.innerWidth;
+      const newHeight = window.innerHeight;
+
+      camera.aspect = newWidth / newHeight;
+      camera.updateProjectionMatrix();
+
+      renderer.setSize(newWidth, newHeight);
+    };
+
+    // Event listener for window resize
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup function to remove the event listener when the component is unmounted
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []); // Empty dependency array to ensure the effect runs only once
 
   return <div ref={sceneRef} />;
 };
 
-export default FirstScene;
+export default BasicScene;

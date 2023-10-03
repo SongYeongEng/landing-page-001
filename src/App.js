@@ -1,15 +1,19 @@
 import React from 'react';
 import FirstScene from './components/FirstScene';
-import './App.css';
+//import './App.css';
+import WorkScene from './components/WorksScene';
+import styled from "styled-components"
+
+const Container = styled.div`
+ height: 100vh;
+ background-color: red;
+`
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>React + Three.js App</h1>
-        <FirstScene />
-      </header>
-    </div>
+    <Container>
+      <WorkScene/>
+    </Container>
   );
 }
 
