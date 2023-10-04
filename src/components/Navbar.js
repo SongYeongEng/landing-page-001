@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import logo from "./logo.png";
-import linkedin from "./linkedin.png"
-import github from "./github.png"
+import linkedin from "./whiteLinkedIn.png"
+import github from "./whiteGitHub.svg"
 import './fonts.css';
 
 const Section = styled.div`
@@ -35,7 +35,7 @@ const List = styled.ul`
   list-style: none;
   font-family: 'MonoRegular', sans-serif;
   font-size: 30px; 
-  color: black; 
+  color: white; 
   padding-top: 150px;
 `;
 
@@ -66,10 +66,12 @@ const LogoContainer = styled.div`
 const ListItem = styled.li`
   padding: 10px 35px; /* Adjust padding as needed */
   border-radius: 10px; /* Adjust border-radius as needed */
-  background-color: #E1CC8A;
+  background-color: rgba(235, 235, 235, 0.3); /* Use RGBA for background color with opacity */
+
 
  &:hover {
-    background-color: #e0e0e0; /* Change background color on hover */
+  background-color: rgba(235, 235, 235, 0.7); /* Use RGBA for background color with opacity */
+
     transition: background-color 0.3s ease; /* Add a smooth transition effect */
   }
 `;
@@ -78,36 +80,64 @@ const StyledImage = styled.img``;
 
 const LinkedInIcon = styled.img`
   width: 30px; /* Set the width of the LinkedIn icon */
-  height: auto;
+  height: 82%;
 `;
 
 const GithubIcon = styled.img`
-  width: 30px; /* Set the width of the LinkedIn icon */
-  height: auto;
+  width: 45px; /* Set the width of the LinkedIn icon */
+  height: 100%;
+
 `;
 
-function Navbar() {
-    return (
-      <Section>
-        <Container>
-          <Links>
-            <LogoContainer>
-              <LogoImage as={StyledImage} src={logo} alt="Logo" />
-            </LogoContainer>
-          </Links>
-          <List>
-              <ListItem>Home</ListItem>
-              <ListItem>Projects</ListItem>
-              <ListItem>
-              <GithubIcon src={github} alt="Github" />
-              </ListItem>
-              <ListItem>
-                <LinkedInIcon src={linkedin} alt="LinkedIn" />
-              </ListItem>
-            </List>
-        </Container>
-      </Section>
-    );
+const LinkedInLink = styled.a`
+  padding: 10px 35px; /* Adjust padding as needed */
+  border-radius: 10px; /* Adjust border-radius as needed */
+  background-color: rgba(235, 235, 235, 0.3); /* Use RGBA for background color with opacity */
+
+
+ &:hover {
+  background-color: rgba(235, 235, 235, 0.7); /* Use RGBA for background color with opacity */
+
+    transition: background-color 0.3s ease; /* Add a smooth transition effect */
   }
-  
-  export default Navbar;
+`;
+
+const GithubLink = styled.a`
+ padding: 10px 35px; /* Adjust padding as needed */
+  border-radius: 10px; /* Adjust border-radius as needed */
+  background-color: rgba(235, 235, 235, 0.3); /* Use RGBA for background color with opacity */
+
+
+ &:hover {
+  background-color: rgba(235, 235, 235, 0.7); /* Use RGBA for background color with opacity */
+
+    transition: background-color 0.3s ease; /* Add a smooth transition effect */
+  }
+`;
+function Navbar() {
+  return (
+    <Section>
+      <Container>
+        <Links>
+          <LogoContainer>
+            <LogoImage as={StyledImage} src={logo} alt="Logo" />
+          </LogoContainer>
+        </Links>
+        <List>
+          <ListItem>Home</ListItem>
+          <ListItem>Projects</ListItem>
+          <GithubLink href="https://github.com/SongYeongEng">
+            <GithubIcon src={github} alt="Github" />
+          </GithubLink>
+          <LinkedInLink href="https://www.linkedin.com/in/engsongyeong/">
+
+              <LinkedInIcon src={linkedin} alt="LinkedIn" />
+
+          </LinkedInLink>
+        </List>
+      </Container>
+    </Section>
+  );
+}
+
+export default Navbar;
