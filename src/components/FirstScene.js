@@ -1,17 +1,18 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
-const BasicScene = () => {
-  const sceneRef = useRef();
+const Cube = () => {
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+  const renderer = new THREE.WebGLRenderer();
+
+  const cubeRef = useRef();
 
   useEffect(() => {
-    // Set up scene, camera, and renderer
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer();
-
+    // Set up the scene
+    camera.position.z = 5;
     renderer.setSize(window.innerWidth, window.innerHeight);
-    sceneRef.current.appendChild(renderer.domElement);
+    cubeRef.current.appendChild(renderer.domElement);
 
     // Create a cube
     const geometry = new THREE.BoxGeometry();
@@ -19,46 +20,27 @@ const BasicScene = () => {
     const cube = new THREE.Mesh(geometry, material);
     scene.add(cube);
 
-    // Position the camera
-    camera.position.z = 5;
-
     // Animation function
     const animate = () => {
+      requestAnimationFrame(animate);
+
       // Rotate the cube
       cube.rotation.x += 0.01;
       cube.rotation.y += 0.01;
 
-      // Render the scene
       renderer.render(scene, camera);
-
-      // Request the next frame
-      requestAnimationFrame(animate);
     };
 
     // Start the animation loop
     animate();
 
-    // Handle window resize
-    const handleResize = () => {
-      const newWidth = window.innerWidth;
-      const newHeight = window.innerHeight;
-
-      camera.aspect = newWidth / newHeight;
-      camera.updateProjectionMatrix();
-
-      renderer.setSize(newWidth, newHeight);
-    };
-
-    // Event listener for window resize
-    window.addEventListener('resize', handleResize);
-
-    // Cleanup function to remove the event listener when the component is unmounted
+    // Clean up on component unmount
     return () => {
-      window.removeEventListener('resize', handleResize);
+      renderer.dispose();
     };
-  }, []); // Empty dependency array to ensure the effect runs only once
+  }, []); // Empty dependency array to run the useEffect only once
 
-  return <div ref={sceneRef} />;
+  return <div ref={cubeRef} />;
 };
 
-export default BasicScene;
+export default Cube;

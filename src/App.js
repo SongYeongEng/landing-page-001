@@ -7,9 +7,10 @@ import WorkScene from './components/WorksScene';
 
 function App() {
   return (
-    
+    <div>
       <WorkScene/>
-    
+      <FirstScene/>
+      </div>
   );
 }
 
