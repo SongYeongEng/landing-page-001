@@ -2,7 +2,6 @@ import React from 'react'
 import Navbar from './Navbar'
 import styled from "styled-components"
 import bread from './bread.png';
-import cloud from './cloud.png';
 import './fonts.css';
 
 
@@ -20,6 +19,7 @@ const Container = styled.div`
   height: 100vh;
   display: flex;
   justify-content: space-between;
+  transform: scale(0.5);
 
 `
 
@@ -35,7 +35,7 @@ flex:5;
 
 const Title = styled.h1`
   text-align: right;
-  font-size: 80px;
+  font-size: 40px;
   font-family: 'MonoRegular';
   padding-top: 45%;
   

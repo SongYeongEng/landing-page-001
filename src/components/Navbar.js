@@ -10,8 +10,7 @@ import './fonts.css';
 const Section = styled.div`
   display: flex;
   justify-content: center;
-  padding-top: 20px; 
-  padding-bottom: 20px; 
+  padding: 50px;
 `;
 
 const Container = styled.div`
@@ -19,8 +18,6 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px; 
-
 `;
 
 const Links = styled.div`
@@ -32,23 +29,22 @@ const Links = styled.div`
 const List = styled.ul`
   display: flex;
   align-items: right;
-  gap: 50px;
+  gap: 15px;
   margin-right: 0;
   list-style: none;
   font-family: 'MonoRegular', sans-serif;
-  font-size: 30px; 
+  font-size: 15px; 
   color: white; 
-  padding-top: 150px;
 `;
 
 const LogoImage = styled.img`
   display: block;
-  width: 180%;
+  width: 85%;
   height: auto;
   background-color: #6E80A2;
   border-radius: 10px;
   padding: 15px;
-  min-width: 350px;
+  min-width: 150px;
   transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
 `;
 
@@ -66,7 +62,7 @@ const LogoContainer = styled.div`
 
 
 const ListItem = styled.li`
-  padding: 10px 35px; /* Adjust padding as needed */
+  padding: 10px 10px ; /* Adjust padding as needed */
   border-radius: 10px; /* Adjust border-radius as needed */
   background-color: rgba(235, 235, 235, 0.3); /* Use RGBA for background color with opacity */
 
@@ -92,19 +88,18 @@ const ListItem = styled.li`
 const StyledImage = styled.img``;
 
 const LinkedInIcon = styled.img`
-  width: 30px; /* Set the width of the LinkedIn icon */
+  width: 15px; /* Set the width of the LinkedIn icon */
   padding-top: 1px;
-  height: 80%;
 `;
 
 const GithubIcon = styled.img`
-  width: 45px; /* Set the width of the LinkedIn icon */
+  width: 20px; /* Set the width of the LinkedIn icon */
   height: 100%;
 
 `;
 
 const LinkedInLink = styled.a`
-  padding: 10px 35px; /* Adjust padding as needed */
+  padding: 10px 20px; /* Adjust padding as needed */
   border-radius: 10px; /* Adjust border-radius as needed */
   background-color: rgba(235, 235, 235, 0.3); /* Use RGBA for background color with opacity */
 
@@ -117,7 +112,7 @@ const LinkedInLink = styled.a`
 `;
 
 const GithubLink = styled.a`
- padding: 10px 35px; /* Adjust padding as needed */
+ padding: 10px 20px; /* Adjust padding as needed */
   border-radius: 10px; /* Adjust border-radius as needed */
   background-color: rgba(235, 235, 235, 0.3); /* Use RGBA for background color with opacity */
 
