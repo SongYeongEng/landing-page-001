@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/landing-page-001/static/css/main.a937c7ab.css",
-    "main.js": "/landing-page-001/static/js/main.925b1307.js",
+    "main.js": "/landing-page-001/static/js/main.ca683415.js",
     "static/js/787.4a47704d.chunk.js": "/landing-page-001/static/js/787.4a47704d.chunk.js",
     "static/media/vrshop.png": "/landing-page-001/static/media/vrshop.01bbeceb78b937457e84.png",
     "static/media/project3.png": "/landing-page-001/static/media/project3.ab9f2785fca75995a3a7.png",
@@ -13,11 +13,11 @@
     "static/media/whiteGitHub.svg": "/landing-page-001/static/media/whiteGitHub.ce47d33915b3c6f9ab217ae8b7a8118d.svg",
     "index.html": "/landing-page-001/index.html",
     "main.a937c7ab.css.map": "/landing-page-001/static/css/main.a937c7ab.css.map",
-    "main.925b1307.js.map": "/landing-page-001/static/js/main.925b1307.js.map",
+    "main.ca683415.js.map": "/landing-page-001/static/js/main.ca683415.js.map",
     "787.4a47704d.chunk.js.map": "/landing-page-001/static/js/787.4a47704d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a937c7ab.css",
-    "static/js/main.925b1307.js"
+    "static/js/main.ca683415.js"
   ]
 }
