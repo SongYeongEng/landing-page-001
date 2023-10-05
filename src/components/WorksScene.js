@@ -11,8 +11,8 @@ function WorksScene() {
   return (
     <Section>
       <Navbar/>
-
     </Section>
+
   )
 }
 

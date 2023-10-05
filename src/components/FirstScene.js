@@ -1,46 +1,97 @@
-import React, { useEffect, useRef } from 'react';
-import * as THREE from 'three';
+import React from 'react';
+import styled, { keyframes } from 'styled-components';
+import Works from './Works'
 
-const Cube = () => {
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-  const renderer = new THREE.WebGLRenderer();
+const moveWave = keyframes`
+  0% {
+    transform: translateX(0) translateZ(0) scaleY(2);
+  }
+  50% {
+    transform: translateX(-25%) translateZ(0) scaleY(0.55);
+  }
+  100% {
+    transform: translateX(-50%) translateZ(0) scaleY(2);
+  }
+`;
 
-  const cubeRef = useRef();
+const WaveWrapper = styled.div`
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+`;
 
-  useEffect(() => {
-    // Set up the scene
-    camera.position.z = 5;
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    cubeRef.current.appendChild(renderer.domElement);
+const WaveWrapperInner = styled.div`
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+  background-image: linear-gradient(180deg, #6e9ca0 0%, #26393b 100%);
+`;
 
-    // Create a cube
-    const geometry = new THREE.BoxGeometry();
-    const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-    const cube = new THREE.Mesh(geometry, material);
-    scene.add(cube);
+const Wave = styled.div`
+  position: absolute;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background-repeat: repeat no-repeat;
+  background-position: 0 bottom;
+  transform-origin: center bottom;
+`;
 
-    // Animation function
-    const animate = () => {
-      requestAnimationFrame(animate);
+const WaveTop = styled(Wave)`
+  background-size: 50% 100px;
+  animation: ${moveWave} 3s;
+  -webkit-animation: ${moveWave} 3s;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+  z-index: 15;
+  opacity: 0.5;
+  position: absolute;
+`;
 
-      // Rotate the cube
-      cube.rotation.x += 0.01;
-      cube.rotation.y += 0.01;
+const WaveMiddle = styled(Wave)`
+  background-size: 50% 120px;
+  animation: ${moveWave} 10s linear infinite;
+  z-index: 10;
+  opacity: 0.75;
+  position: absolute;
+`;
 
-      renderer.render(scene, camera);
-    };
+const WaveBottom = styled(Wave)`
+  background-size: 50% 100px;
+  animation: ${moveWave} 15s linear infinite;
+  z-index: 5;
+  position: absolute;
+`;
 
-    // Start the animation loop
-    animate();
+const DivBoss = styled.div`
+  z-index: 20;
+  position: relative;
+`;
 
-    // Clean up on component unmount
-    return () => {
-      renderer.dispose();
-    };
-  }, []); // Empty dependency array to run the useEffect only once
-
-  return <div ref={cubeRef} />;
+const WaveComponent = () => {
+  return (
+    <div>
+      <DivBoss>
+       <Works/>
+      </DivBoss>
+      <WaveWrapper className="waveWrapper waveAnimation">
+        <WaveWrapperInner className="bgTop">
+          <WaveTop className="waveTop" style={{ backgroundImage: "url('http://front-end-noobs.com/jecko/img/wave-top.png')" }} />
+        </WaveWrapperInner>
+        <WaveWrapperInner className="bgMiddle">
+          <WaveMiddle className="waveMiddle" style={{ backgroundImage: "url('http://front-end-noobs.com/jecko/img/wave-mid.png')" }} />
+        </WaveWrapperInner>
+        <WaveWrapperInner className="bgBottom">
+          <WaveBottom className="waveBottom" style={{ backgroundImage: "url('http://front-end-noobs.com/jecko/img/wave-bot.png')" }} />
+        </WaveWrapperInner>
+      </WaveWrapper>
+    </div>
+  );
 };
 
-export default Cube;
+export default WaveComponent;

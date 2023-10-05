@@ -74,13 +74,25 @@ const ListItem = styled.li`
 
     transition: background-color 0.3s ease; /* Add a smooth transition effect */
   }
+
+  ${(props) =>
+    props.hire &&
+    `
+    background-color:#BB5A5A;
+    &:hover {
+      background-color: #EA6868;
+    }
+    
+  `}
+
 `;
 //const Button = styled.button``;
 const StyledImage = styled.img``;
 
 const LinkedInIcon = styled.img`
   width: 30px; /* Set the width of the LinkedIn icon */
-  height: 82%;
+  padding-top: 1px;
+  height: 80%;
 `;
 
 const GithubIcon = styled.img`
@@ -130,10 +142,9 @@ function Navbar() {
             <GithubIcon src={github} alt="Github" />
           </GithubLink>
           <LinkedInLink href="https://www.linkedin.com/in/engsongyeong/">
-
               <LinkedInIcon src={linkedin} alt="LinkedIn" />
-
           </LinkedInLink>
+          <ListItem hire>Hire</ListItem>
         </List>
       </Container>
     </Section>
