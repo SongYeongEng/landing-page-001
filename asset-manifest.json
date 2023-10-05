@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.3637036d.css",
+    "main.js": "/static/js/main.9c3df46b.js",
+    "static/js/787.4a47704d.chunk.js": "/static/js/787.4a47704d.chunk.js",
+    "static/media/vrshop.png": "/static/media/vrshop.01bbeceb78b937457e84.png",
+    "static/media/project3.png": "/static/media/project3.ab9f2785fca75995a3a7.png",
+    "static/media/bread.png": "/static/media/bread.c1ea478274c84880edda.png",
+    "static/media/msr.png": "/static/media/msr.8268fd4832151f30159c.png",
+    "static/media/cloud.png": "/static/media/cloud.7cf8c4bc43d77b7f515e.png",
+    "static/media/lcgh.png": "/static/media/lcgh.d0e927dc78a3af362b72.png",
+    "static/media/logo.png": "/static/media/logo.6b12d0cc78cec20498b9.png",
+    "static/media/MonoRegular.woff2": "/static/media/MonoRegular.4b87e0b82ab958e96d2c.woff2",
+    "static/media/whiteGitHub.svg": "/static/media/whiteGitHub.ce47d33915b3c6f9ab217ae8b7a8118d.svg",
+    "index.html": "/index.html",
+    "main.3637036d.css.map": "/static/css/main.3637036d.css.map",
+    "main.9c3df46b.js.map": "/static/js/main.9c3df46b.js.map",
+    "787.4a47704d.chunk.js.map": "/static/js/787.4a47704d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3637036d.css",
+    "static/js/main.9c3df46b.js"
+  ]
+}
