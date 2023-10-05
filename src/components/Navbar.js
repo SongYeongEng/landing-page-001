@@ -5,6 +5,8 @@ import linkedin from "./whiteLinkedIn.png"
 import github from "./whiteGitHub.svg"
 import './fonts.css';
 
+
+
 const Section = styled.div`
   display: flex;
   justify-content: center;
@@ -126,7 +128,28 @@ const GithubLink = styled.a`
     transition: background-color 0.3s ease; /* Add a smooth transition effect */
   }
 `;
+
+
 function Navbar() {
+
+  const handleHireClick = () => {
+    
+    window.location.href = 'mailto:esy.minmax@gmail.com';
+
+  };
+
+  
+  const handleProjectClick = () => {
+    
+    const secondPageElement = document.getElementById('secondPage');
+
+    if (secondPageElement) {
+      secondPageElement.scrollIntoView({ behavior: 'smooth' });
+    }
+
+  };
+
+
   return (
     <Section>
       <Container>
@@ -137,14 +160,14 @@ function Navbar() {
         </Links>
         <List>
           <ListItem>Home</ListItem>
-          <ListItem>Projects</ListItem>
+          <ListItem onClick={handleProjectClick}>Projects</ListItem>
           <GithubLink href="https://github.com/SongYeongEng">
             <GithubIcon src={github} alt="Github" />
           </GithubLink>
           <LinkedInLink href="https://www.linkedin.com/in/engsongyeong/">
               <LinkedInIcon src={linkedin} alt="LinkedIn" />
           </LinkedInLink>
-          <ListItem hire>Hire</ListItem>
+          <ListItem hire onClick={handleHireClick}>Hire</ListItem>
         </List>
       </Container>
     </Section>

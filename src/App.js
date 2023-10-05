@@ -9,11 +9,11 @@ function App() {
   return (
     <div>
       <WorkScene/>
-      <WaveSection>
-        <FirstScene/>
-      </WaveSection>
-      
-
+        <div id="secondPage">
+          <WaveSection>
+            <FirstScene/>
+          </WaveSection>
+        </div>
       </div>
   );
 }
