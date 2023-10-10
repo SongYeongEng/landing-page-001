@@ -22,9 +22,10 @@ const ProductBox = styled.div`
 `;
 
 const ProductImage = styled.img`
-  width: 70%;
+  width: 80%;
   height: auto;
   display: block;
+  align-items: center;
 `;
 
 const ProductOverlay = styled.div`
@@ -56,10 +57,12 @@ const ProductShowcase = () => {
   return (
     <ProductContainer>
       <ProductBox>
+      <a href="https://homurash.itch.io/midnight-snack-run">
         <ProductImage src={msr} alt="Platformer game" />
         <ProductOverlay>
           <ProductText>Midnight Snack Run Platformer game</ProductText>
         </ProductOverlay>
+        </a>
       </ProductBox>
       <ProductBox>
         <ProductImage src={vrshop} alt="Vr App" />

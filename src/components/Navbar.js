@@ -1,11 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import logo from "./logo.png";
-import linkedin from "./whiteLinkedIn.png"
-import github from "./whiteGitHub.svg"
+import linkedin from "./whiteLinkedIn.png";
+import github from "./whiteGitHub.svg";
 import './fonts.css';
-
-
 
 const Section = styled.div`
   display: flex;
@@ -14,27 +12,43 @@ const Section = styled.div`
 `;
 
 const Container = styled.div`
-  width: 3400px;
+  width: 100%;
+  max-width: 1200px; /* Adjust the maximum width as needed */
+  margin: 0 auto; /* Center the navbar */
   display: flex;
-  justify-content: space-between;
+  flex-direction: column; /* Stack items vertically on smaller screens */
   align-items: center;
+
+  @media (min-width: 769px) {
+    flex-direction: row; /* Display items in a row on larger screens */
+    justify-content: space-between;
+  }
 `;
 
 const Links = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 50px;
+  gap: 20px;
+
+  @media (min-width: 769px) {
+    flex-direction: row;
+  }
 `;
 
 const List = styled.ul`
   display: flex;
-  align-items: right;
-  gap: 15px;
-  margin-right: 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
   list-style: none;
   font-family: 'MonoRegular', sans-serif;
-  font-size: 15px; 
-  color: white; 
+  font-size: 15px;
+  color: white;
+
+  @media (min-width: 769px) {
+    flex-direction: row;
+  }
 `;
 
 const LogoImage = styled.img`
@@ -49,28 +63,47 @@ const LogoImage = styled.img`
 `;
 
 const LogoContainer = styled.div`
- position: relative;
-  width: 40%;
+  width: 50%; /* Adjust the width as needed */
 
   &:hover {
     ${LogoImage} {
       background-color: #6786c2;
-      transform: scale(1.1); /* Example: Scale the image slightly on hover */
+      transform: scale(1.3) translateX(3px) translateY(-3px);
+      animation: glitch 0.1s infinite alternate;
     }
+  }
+
+  &:hover {
+    ${LogoImage} {
+      background-color: #6786c2;
+      transform: scale(1.3);
+      animation: bounce 0.5s ease-in-out;
+    }
+  }
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: scale(1.3) translateY(0);
+    }
+    50% {
+      transform: scale(1.3) translateY(-10px);
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-bottom: 20px;
   }
 `;
 
-
 const ListItem = styled.li`
-  padding: 10px 10px ; /* Adjust padding as needed */
-  border-radius: 10px; /* Adjust border-radius as needed */
-  background-color: rgba(235, 235, 235, 0.3); /* Use RGBA for background color with opacity */
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgba(235, 235, 235, 0.3);
 
-
- &:hover {
-  background-color: rgba(235, 235, 235, 0.7); /* Use RGBA for background color with opacity */
-
-    transition: background-color 0.3s ease; /* Add a smooth transition effect */
+  &:hover {
+    background-color: rgba(235, 235, 235, 0.7);
+    transition: background-color 0.3s ease;
   }
 
   ${(props) =>
@@ -80,70 +113,67 @@ const ListItem = styled.li`
     &:hover {
       background-color: #EA6868;
     }
-    
   `}
 
+  @media (min-width: 769px) {
+    padding: 10px 20px; // Adjust padding for larger screens
+  }
 `;
-//const Button = styled.button``;
+
 const StyledImage = styled.img``;
 
 const LinkedInIcon = styled.img`
-  width: 15px; /* Set the width of the LinkedIn icon */
+  width: 15px;
   padding-top: 1px;
 `;
 
 const GithubIcon = styled.img`
-  width: 20px; /* Set the width of the LinkedIn icon */
+  width: 20px;
   height: 100%;
-
 `;
 
 const LinkedInLink = styled.a`
-  padding: 10px 20px; /* Adjust padding as needed */
-  border-radius: 10px; /* Adjust border-radius as needed */
-  background-color: rgba(235, 235, 235, 0.3); /* Use RGBA for background color with opacity */
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgba(235, 235, 235, 0.3);
 
+  &:hover {
+    background-color: rgba(235, 235, 235, 0.7);
+    transition: background-color 0.3s ease;
+  }
 
- &:hover {
-  background-color: rgba(235, 235, 235, 0.7); /* Use RGBA for background color with opacity */
-
-    transition: background-color 0.3s ease; /* Add a smooth transition effect */
+  @media (min-width: 769px) {
+    padding: 10px 20px; // Adjust padding for larger screens
   }
 `;
 
 const GithubLink = styled.a`
- padding: 10px 20px; /* Adjust padding as needed */
-  border-radius: 10px; /* Adjust border-radius as needed */
-  background-color: rgba(235, 235, 235, 0.3); /* Use RGBA for background color with opacity */
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgba(235, 235, 235, 0.3);
 
+  &:hover {
+    background-color: rgba(235, 235, 235, 0.7);
+    transition: background-color 0.3s ease;
+  }
 
- &:hover {
-  background-color: rgba(235, 235, 235, 0.7); /* Use RGBA for background color with opacity */
-
-    transition: background-color 0.3s ease; /* Add a smooth transition effect */
+  @media (min-width: 769px) {
+    padding: 10px 20px; // Adjust padding for larger screens
   }
 `;
 
-
 function Navbar() {
-
   const handleHireClick = () => {
-    
     window.location.href = 'mailto:esy.minmax@gmail.com';
-
   };
 
-  
   const handleProjectClick = () => {
-    
     const secondPageElement = document.getElementById('secondPage');
 
     if (secondPageElement) {
       secondPageElement.scrollIntoView({ behavior: 'smooth' });
     }
-
   };
-
 
   return (
     <Section>
@@ -160,9 +190,11 @@ function Navbar() {
             <GithubIcon src={github} alt="Github" />
           </GithubLink>
           <LinkedInLink href="https://www.linkedin.com/in/engsongyeong/">
-              <LinkedInIcon src={linkedin} alt="LinkedIn" />
+            <LinkedInIcon src={linkedin} alt="LinkedIn" />
           </LinkedInLink>
-          <ListItem hire onClick={handleHireClick}>Hire</ListItem>
+          <ListItem hire onClick={handleHireClick}>
+            Hire
+          </ListItem>
         </List>
       </Container>
     </Section>

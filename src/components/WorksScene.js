@@ -43,8 +43,8 @@ const Title = styled.h1`
 
 
 const Img = styled.img`
- width: 100%;
- height: 100%;
+ width: 130%;
+ height: auto;
 `
 function WorksScene() {
   return (
