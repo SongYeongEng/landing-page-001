@@ -124,12 +124,14 @@ const StyledImage = styled.img``;
 
 const LinkedInIcon = styled.img`
   width: 15px;
-  padding-top: 1px;
+  padding-top: 2px;
+  transform: scale(1.3);
 `;
 
 const GithubIcon = styled.img`
-  width: 20px;
+  width: 15px;
   height: 100%;
+  transform: scale(2.5);
 `;
 
 const LinkedInLink = styled.a`
