@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import logo from "./logo.png";
 import linkedin from "./whiteLinkedIn.png";
 import github from "./whiteGitHub.svg";
+import resume from "./esyResume.pdf";
 import './fonts.css';
 
 const Section = styled.div`
@@ -188,6 +189,11 @@ function Navbar() {
         <List>
           <ListItem>Home</ListItem>
           <ListItem onClick={handleProjectClick}>Projects</ListItem>
+          <ListItem>
+            <a href={resume} target="_blank">
+              Resume
+            </a>
+          </ListItem>
           <GithubLink href="https://github.com/SongYeongEng">
             <GithubIcon src={github} alt="Github" />
           </GithubLink>

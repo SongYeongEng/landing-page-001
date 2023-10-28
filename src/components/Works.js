@@ -73,7 +73,7 @@ const ProductShowcase = () => {
       <ProductBox>
         <ProductImage src= {project3} alt="School Projects" />
         <ProductOverlay>
-          <ProductText>School Projects</ProductText>
+          <ProductText>More Projects ~</ProductText>
         </ProductOverlay>
       </ProductBox>
       <ProductBox>

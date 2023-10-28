@@ -52,7 +52,7 @@ function WorksScene() {
       <Navbar/>
       <Container>
         <Left>
-         <Title>Hi,I am Yeong Eng and i will code for living.</Title> 
+         <Title>Hi,I am Yeong Eng and i will code for</Title> 
         </Left>
         <Right>
 
