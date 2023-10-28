@@ -29,7 +29,7 @@ const ProductImage = styled.img`
 `;
 
 const ProductVideo = styled.video`
-  width: 80%;
+  width: 100%;
   height: auto;
   display: block;
   align-items: center;
@@ -48,6 +48,7 @@ const ProductOverlay = styled.div`
   font-size: 24px;
   opacity: 0;
   transition: opacity 0.3s ease;
+  pointer-events: none;
 
   ${ProductBox}:hover & {
     opacity: 1;
