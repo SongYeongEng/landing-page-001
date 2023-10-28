@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import project3 from './project3.png';
 import msr from './msr.png';
 import lcgh from './lcgh.png';
-import vrshop from './vrshop.png';
+import vr from './vr.mp4';
 
 const ProductContainer = styled.div`
   display: flex;
@@ -28,6 +28,12 @@ const ProductImage = styled.img`
   align-items: center;
 `;
 
+const ProductVideo = styled.video`
+  width: 80%;
+  height: auto;
+  display: block;
+  align-items: center;
+`;
 const ProductOverlay = styled.div`
   position: absolute;
   top: 0;
@@ -65,7 +71,9 @@ const ProductShowcase = () => {
         </a>
       </ProductBox>
       <ProductBox>
-        <ProductImage src={vrshop} alt="Vr App" />
+        <ProductVideo controls autoPlay loop muted>
+        <source src={vr} type="video/mp4" />
+        </ProductVideo>
         <ProductOverlay>
           <ProductText>Vr Shopping System App</ProductText>
         </ProductOverlay>
