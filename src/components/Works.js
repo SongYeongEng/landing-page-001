@@ -4,6 +4,7 @@ import project3 from './project3.png';
 import msr from './msr.png';
 import lcgh from './lcgh.png';
 import vr from './vr.mp4';
+import hackPitch from './myEntrance.mov';
 
 const ProductContainer = styled.div`
   display: flex;
@@ -86,9 +87,11 @@ const ProductShowcase = () => {
         </ProductOverlay>
       </ProductBox>
       <ProductBox>
-        <ProductImage src={lcgh} alt="Product 4" />
+        <ProductVideo controls autoPlay loop>
+        <source src={hackPitch} type="video/mp4" />
+        </ProductVideo>
         <ProductOverlay>
-          <ProductText>Skill Training Progress</ProductText>
+          <ProductText>Hackaton Pitch</ProductText>
         </ProductOverlay>
       </ProductBox>
     </ProductContainer>
